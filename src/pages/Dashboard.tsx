@@ -17,7 +17,8 @@ export default function Dashboard() {
 
 
   return (
-    <div className="min-h-screen bg-brand-bg text-white">
+    <div className="min-h-screen bg-white text-black dark:bg-brand-bg dark:text-white">
+
       <Helmet>
         <title>Dashboard - DSCE Alumni Connect</title>
       </Helmet>

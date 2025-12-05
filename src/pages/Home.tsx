@@ -28,7 +28,7 @@ const calculateProgress = (raised: string, goal: string) => {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground">
       <Helmet>
         <title>DSCE Alumni Connect - Reconnect, Mentor, Grow</title>
         <meta name="description" content="Join the DSCE Alumni network. Connect with fellow graduates, find mentors, and stay updated with college events and news." />
@@ -59,22 +59,8 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col justify-center items-center px-4 pt-20">
-        <div className="absolute inset-0">
-          <ColorBends
-            colors={["#4A70A9"]}
-            rotation={0}
-            speed={0.3}
-            scale={0.5}
-            frequency={1}
-            warpStrength={1}
-            mouseInfluence={0}
-            parallax={0.5}
-            noise={0.1}
-            transparent={false}
-            skipFrames={1}
-          />
-        </div>
+      <section className="relative h-screen flex flex-col justify-center items-center px-4 pt-20" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%)' }}>
+      {/* No animated div needed */}
         
         <div className="relative z-10 text-center space-y-6 max-w-5xl mx-auto">
           <motion.div
@@ -82,9 +68,9 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl md:text-9xl font-black tracking-tighter leading-none mb-4">
-              DSCE ALUMNI
-              <span className="block text-brand-accent">CONNECT</span>
+            <h1 className="text-6xl md:text-9xl font-black tracking-tighter leading-none mb-4 text-yellow-400">
+              DSCE 
+              <span className="block text-brand-accent">ALUMNICONNECT</span>
             </h1>
           </motion.div>
           
@@ -110,40 +96,39 @@ export default function Home() {
       </section>
 
       {/* Notable Alumni Section (Replaces Scrolling Text) */}
-      <div className="py-20 bg-black border-y border-white/10">
-        <h2 className="text-center text-3xl font-bold mb-12 tracking-tight">NOTABLE <span className="text-brand-accent">ALUMNI</span></h2>
-        <NotableAlumni alumni={notableAlumni} baseVelocity={-1} />
-      </div>
+ 
 
-      {/* The Legacy Section */}
-      <ParallaxSection id="legacy" className="py-32 px-6 md:px-12 bg-zinc-900">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter">
-              THE <span className="text-brand-accent">LEGACY</span>
-            </h2>
-            <p className="text-xl text-gray-400 leading-relaxed">
-              Since 1979, DSCE has been a beacon of excellence. Our alumni network spans the globe, leading industries, innovating technologies, and shaping the future.
-            </p>
-            <div className="grid grid-cols-2 gap-8 pt-8">
-              <div>
-                <h3 className="text-4xl font-bold text-white">50k+</h3>
-                <p className="text-brand-accent-light">Global Alumni</p>
-              </div>
-              <div>
-                <h3 className="text-4xl font-bold text-white">40+</h3>
-                <p className="text-brand-accent-light">Years of Excellence</p>
-              </div>
-            </div>
-          </div>
-          <div className="h-[500px] w-full flex items-center justify-center">
-             <PhotoStack images={legacyImages} />
-          </div>
-        </div>
-      </ParallaxSection>
-
+      <div className="py-20 bg-gray-50 border-y border-gray-300">
+     <h2 className="text-center text-3xl font-bold mb-12 tracking-tight text-black">NOTABLE <span className="text-brand-accent">ALUMNI</span></h2>
+     <NotableAlumni alumni={notableAlumni} baseVelocity={-1} />
+   </div>
+   <ParallaxSection id="legacy" className="py-32 px-6 md:px-12 bg-gray-100">
+     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+       <div className="space-y-8">
+         <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-black">
+           THE <span className="text-brand-accent">LEGACY</span>
+         </h2>
+         <p className="text-xl text-gray-600 leading-relaxed">
+           Since 1979, DSCE has been a beacon of excellence. Our alumni network spans the globe, leading industries, innovating technologies, and shaping the future.
+         </p>
+         <div className="grid grid-cols-2 gap-8 pt-8">
+           <div>
+             <h3 className="text-4xl font-bold text-black">50k+</h3>
+             <p className="text-brand-accent-light">Global Alumni</p>
+           </div>
+           <div>
+             <h3 className="text-4xl font-bold text-black">40+</h3>
+             <p className="text-brand-accent-light">Years of Excellence</p>
+           </div>
+         </div>
+       </div>
+       <div className="h-[500px] w-full flex items-center justify-center">
+         <PhotoStack images={legacyImages} />
+       </div>
+     </div>
+   </ParallaxSection>
       {/* Fundraising Projects Section */}
-      <section id="fundraising" className="py-32 px-6 bg-black">
+      <section id="fundraising" className="py-32 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center">
             FUNDRAISING <span className="text-brand-accent">PROJECTS</span>
@@ -152,7 +137,7 @@ export default function Home() {
             {fundraisingProjects.map((project, i) => (
               <motion.div 
                 key={i} 
-                className="p-8 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-102 hover:border-brand-accent/80 hover:bg-white/10 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.6)]"
+                className="p-8 rounded-2xl bg-gray-50 border border-gray-300 transition-all duration-300 hover:scale-102 hover:border-brand-accent/80 hover:bg-gray-100 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.2)]"                
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -186,7 +171,7 @@ export default function Home() {
       </section>
 
       {/* Latest News Section */}
-      <section id="news" className="py-32 px-6 bg-zinc-900">
+      <section id="news" className="py-32 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center">
             LATEST <span className="text-brand-accent">NEWS</span>
@@ -221,7 +206,7 @@ export default function Home() {
       </section>
 
       {/* Upcoming Events Section */}
-      <section id="events" className="py-32 px-6 bg-black">
+      <section id="events" className="py-32 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center">
             UPCOMING <span className="text-brand-accent">EVENTS</span>
@@ -230,7 +215,7 @@ export default function Home() {
             {upcomingEvents.map((event, i) => (
               <motion.div 
                 key={i} 
-                className="flex items-center p-6 rounded-2xl bg-white/5 border border-white/10 group cursor-pointer transition-all duration-300 hover:scale-103 hover:border-brand-accent/80 hover:bg-white/10"
+                 className="flex items-center p-6 rounded-2xl bg-gray-50 border border-gray-300 group cursor-pointer transition-all duration-300 hover:scale-103 hover:border-brand-accent/80 hover:bg-gray-100"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -259,13 +244,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="features" className="py-32 px-6 bg-zinc-900">
-        <div className="max-w-7xl mx-auto">
+      <section id="features" className="py-32 px-6 bg-gray-100">        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, i) => (
               <motion.div 
                 key={i} 
-                className="p-8 rounded-2xl bg-white/5 border border-white/10 group cursor-pointer transition-all duration-300 hover:scale-105 hover:border-brand-accent/80 hover:bg-white/10"
+                   className="p-8 rounded-2xl bg-gray-50 border border-gray-300 group cursor-pointer transition-all duration-300 hover:scale-105 hover:border-brand-accent/80 hover:bg-gray-100"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -282,13 +266,13 @@ export default function Home() {
 
       {/* Footer */}
       {/* Footer */}
-      <footer id="quick-links" className="py-16 border-t border-white/10 bg-zinc-950">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <footer id="quick-links" className="py-16 border-t border-gray-300 bg-gray-200">
+            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* About */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white">About</h3>
-            <ul className="space-y-4 text-gray-400">
-              <li><a href="#" className="hover:text-brand-accent transition-colors">Alumni Association</a></li>
+            <h3 className="text-lg font-bold mb-6 text-black">About</h3>
+            <ul className="space-y-4 text-gray-600">
+             <li><a href="#" className="hover:text-brand-accent transition-colors">Alumni Association</a></li>
               <li><a href="#" className="hover:text-brand-accent transition-colors">Executive Committee</a></li>
               <li><a href="#" className="hover:text-brand-accent transition-colors">Privacy Policy</a></li>
             </ul>
@@ -296,8 +280,8 @@ export default function Home() {
 
           {/* News */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white">News</h3>
-            <ul className="space-y-4 text-gray-400">
+            <h3 className="text-lg font-bold mb-6 text-black">News</h3>
+            <ul className="space-y-4 text-gray-600">
               <li><a href="#" className="hover:text-brand-accent transition-colors">Annual Reports</a></li>
               <li><a href="#" className="hover:text-brand-accent transition-colors">Newsletters</a></li>
               <li><a href="#" className="hover:text-brand-accent transition-colors">Blog</a></li>
@@ -306,8 +290,8 @@ export default function Home() {
 
           {/* Events */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Events</h3>
-            <ul className="space-y-4 text-gray-400">
+            <h3 className="text-lg font-bold mb-6 text-black">Events</h3>
+            <ul className="space-y-4 text-gray-600">
               <li><a href="#" className="hover:text-brand-accent transition-colors">Alumni Homecoming</a></li>
               <li><a href="#" className="hover:text-brand-accent transition-colors">Tech Talks</a></li>
               <li><a href="#" className="hover:text-brand-accent transition-colors">Mentorship Program</a></li>
@@ -316,12 +300,12 @@ export default function Home() {
 
           {/* Connect */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Connect</h3>
-            <ul className="space-y-4 text-gray-400">
+            <h3 className="text-lg font-bold mb-6 text-black">Connect</h3>
+            <ul className="space-y-4 text-gray-600">
               <li className="flex items-center"><Mail className="w-4 h-4 mr-2" /> alumni@dsce.edu.in</li>
               <li className="flex items-center"><Phone className="w-4 h-4 mr-2" /> +91 80 2666 xxxx</li>
             </ul>
-            <div className="flex space-x-4 mt-6 text-gray-400">
+            <div className="flex space-x-4 mt-6 text-gray-">
               <a href="#" className="hover:text-brand-accent transition-colors"><Facebook className="w-5 h-5" /></a>
               <a href="#" className="hover:text-brand-accent transition-colors"><Twitter className="w-5 h-5" /></a>
               <a href="#" className="hover:text-brand-accent transition-colors"><Linkedin className="w-5 h-5" /></a>
@@ -329,7 +313,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="mt-16 pt-8 border-t border-white/10 text-center text-gray-500">
+        <div className="mt-16 pt-8 border-t border-gray-300 text-center text-gray-500">
           <p>© 2025 DSCE Alumni Association. All rights reserved.</p>
         </div>
       </footer>

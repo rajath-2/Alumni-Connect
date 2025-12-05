@@ -13,7 +13,7 @@ const VerifyOtp = lazy(() => import('./pages/VerifyOtp'));
 
 // Loading fallback
 const LoadingFallback = () => (
-  <div className="flex h-screen w-full items-center justify-center bg-black text-white">
+  <div className="flex h-screen w-full items-center justify-center bg-white text-black">
     <div className="h-8 w-8 animate-spin rounded-full border-4 border-brand-accent border-t-transparent"></div>
   </div>
 );

@@ -1,40 +1,40 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-bg: #000000;
-  --color-brand-accent: #4A70A9;
-  --color-brand-accent-light: #8FABD4;
-  --color-brand-hover: rgba(143, 171, 212, 0.3);
-  --color-brand-hover-1: rgba(239, 236, 227, 1);
+  --color-brand-bg: #ffffff;  /* Changed from black to white for light background */
+  --color-brand-accent: #4A70A9;  /* Kept as-is (your brand blue) */
+  --color-brand-accent-light: #8FABD4;  /* Kept as-is */
+  --color-brand-hover: rgba(143, 171, 212, 0.3);  /* Kept as-is (subtle hover) */
+  --color-brand-hover-1: rgba(239, 236, 227, 1);  /* Kept as-is */
 
-  /* Shadcn colors */
-  --color-background: #000000;
-  --color-foreground: #ffffff;
-  --color-card: #09090b;
-  --color-card-foreground: #ffffff;
-  --color-popover: #09090b;
-  --color-popover-foreground: #ffffff;
-  --color-primary: #4A70A9;
-  --color-primary-foreground: #ffffff;
-  --color-secondary: #27272a;
-  --color-secondary-foreground: #ffffff;
-  --color-muted: #27272a;
-  --color-muted-foreground: #a1a1aa;
-  --color-accent: #27272a;
-  --color-accent-foreground: #ffffff;
-  --color-destructive: #7f1d1d;
-  --color-destructive-foreground: #ffffff;
-  --color-border: #27272a;
-  --color-input: #27272a;
-  --color-ring: #4A70A9;
+  /* Shadcn colors - converted to light mode */
+  --color-background: #ffffff;  /* Changed from black to white */
+  --color-foreground: #000000;  /* Changed from white to black */
+  --color-card: #ffffff;  /* Changed from dark gray to white */
+  --color-card-foreground: #000000;  /* Changed from white to black */
+  --color-popover: #ffffff;  /* Changed from dark gray to white */
+  --color-popover-foreground: #000000;  /* Changed from white to black */
+  --color-primary: #4A70A9;  /* Kept as-is (primary brand color) */
+  --color-primary-foreground: #ffffff;  /* Kept white for contrast on blue */
+  --color-secondary: #f4f4f5;  /* Changed to light gray (from dark) */
+  --color-secondary-foreground: #000000;  /* Changed from white to black */
+  --color-muted: #f4f4f5;  /* Changed to light gray (from dark) */
+  --color-muted-foreground: #71717a;  /* Changed to darker gray for muted text */
+  --color-accent: #f4f4f5;  /* Changed to light gray (from dark) */
+  --color-accent-foreground: #000000;  /* Changed from white to black */
+  --color-destructive: #ef4444;  /* Changed to standard red (from dark red) */
+  --color-destructive-foreground: #ffffff;  /* Kept white for contrast */
+  --color-border: #e4e4e7;  /* Changed to light gray border */
+  --color-input: #ffffff;  /* Changed to white (from dark) */
+  --color-ring: #4A70A9;  /* Kept as-is (focus ring) */
   --radius-lg: 0.5rem;
   --radius-md: calc(0.5rem - 2px);
   --radius-sm: calc(0.5rem - 4px);
 }
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: #ffffff;  /* Changed from black to white */
+  --foreground: #000000;  /* Changed from white to black */
 }
 
 body {
